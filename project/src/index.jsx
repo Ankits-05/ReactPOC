@@ -3,8 +3,8 @@
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AppContainer from 'components/AppContainer';
-import LoginContainer from 'components/LoginContainer';
+import AppContainer from 'containers/AppContainer';
+import LoginContainer from 'containers/LoginContainer';
 
 ReactDOM.render(
   <AppContainer />,

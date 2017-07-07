@@ -4,27 +4,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import AppBar from 'material-ui/AppBar';
-import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
 
 const HeaderComponent = props => {
+  const style = {
+    margin: 12,
+  };
+    let logoutButton;
+    if(props.username !== '') {
+        logoutButton =
+          <RaisedButton label="Logout" primary={true} style={style} />
+    }
     const onChangeScreen = props.changeScreenName;
     return (
       <div>
         <AppBar
           title="My Company"
           iconElementRight={<div>
-            <FlatButton
-              label="Screen 1"
-              onClick={
-                () => onChangeScreen('Screen 1')
-                }
-            />
-            <FlatButton
-              onClick={
-                () => onChangeScreen('Screen 2')
-                }
-              label="Screen 2" value="Screen2"
-            />
+            Welcome, {props.username}
+            <br />
+            {logoutButton}
           </div>}
         />
       </div>
@@ -32,7 +31,8 @@ const HeaderComponent = props => {
 };
 
 HeaderComponent.propTypes = {
-    changeScreenName: PropTypes.func
+  changeScreenName: PropTypes.func,
+  username: PropTypes.string
 };
 
 export default HeaderComponent;

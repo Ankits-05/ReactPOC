@@ -45,7 +45,7 @@ const LoginComponent = props => {
           onClick={onSubmit}
         />
         <Snackbar
-          open={props.open}
+          open={props.openErrorMessage}
           message="Wrong Credentials"
           autoHideDuration={4000}
           onRequestClose={props.handleRequestClose}
@@ -60,11 +60,7 @@ LoginComponent.propTypes = {
   handlePasswordChange: PropTypes.func,
   onSubmit: PropTypes.func,
   userErrorMsg: PropTypes.string,
-  passwordErrorMsg: PropTypes.string,
-  loggedInUser: PropTypes.bool,
-  open: PropTypes.bool,
-  handleRequestClose: PropTypes.func,
-  handleTouchTap: PropTypes.func
+  passwordErrorMsg: PropTypes.string
 };
 
 export default LoginComponent;

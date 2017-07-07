@@ -4,23 +4,37 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import LoginContainer from 'components/LoginContainer';
+import EmployeeContainer from 'components/EmployeeContainer';
 
 const BodyContainer = props => {
-  if(props.screenName === 'login') {
-    return (<div>
 
-      <LoginContainer loggedInUser={props.loggedInUser} checkLogin={props.checkLogin}/>
-    </div>)
-  } else {
+  if(props.screenName === 'Login') {
     return (<div>
-      <LoginContainer loggedInUser={props.loggedInUser} checkLogin={props.checkLogin}/>
-    </div>)
+        <LoginContainer
+          loggedInUser={props.loggedInUser}
+          checkLogin={props.checkLogin}
+          openErrorMessage={props.openErrorMessage}
+          handleTouchTap={props.handleTouchTap}
+          handleRequestClose={props.handleRequestClose}
+        />
+      </div>
+    )
+  } else if(props.screenName === 'Employee') {
+    return (
+      <div>
+        <EmployeeContainer employeeList={props.employeeList} />
+      </div>
+    )
   }
 }
 
 BodyContainer.propTypes = {
+  loggedInUser: PropTypes.bool,
+  openErrorMessage: PropTypes.bool,
+  handleTouchTap: PropTypes.func,
+  handleRequestClose: PropTypes.func,
   screenName: PropTypes.string,
-  loggedInUser: PropTypes.bool
+  employeeList: PropTypes.arrayOf
 };
 
 export default BodyContainer;
