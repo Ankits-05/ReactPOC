@@ -8,45 +8,46 @@ import BodyContainer from 'components/BodyContainer';
 
 class AppContainer extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      screenName: null,
-      loggedInUser: false
-    };
+    constructor(props) {
+        super(props);
+        this.state = {
+            screenName: null,
+            loggedInUser: false
+        };
    // this.onChangeScreen = this.onChangeScreen.bind(this);
-    this.checkLogin = this.checkLogin.bind(this);
-  }
+        this.checkLogin = this.checkLogin.bind(this);
+    }
 
-  /*onChangeScreen(newName) {
+  /* onChangeScreen(newName) {
     this.setState({screenName: newName});
   }*/
 
-  checkLogin(username, password) {
-    if (username === 'demo' && password === 'demo') {
-      this.setState({loggedInUser: true});
+    checkLogin(username, password) {
+        if (username === 'demo' && password === 'demo') {
+            this.setState({ loggedInUser: true });
      // this.onChangeScreen('Employee');
-      alert("Success");
-    } else {
-      this.setState({loggedInUser: false});
-      //this.onChangeScreen('Login');
+            alert('Success');
+        } else {
+            this.setState({ loggedInUser: false });
+      // this.onChangeScreen('Login');
+        }
     }
-  }
 
-  render() {
-    return (
-      <MuiThemeProvider>
-        <div>
-          <HeaderComponent
-            changeScreenName={this.onChangeScreen}
-          />
-          <BodyContainer
-            screenName={this.state.screenName}
-            checkLogin={this.checkLogin}
-            loggedInUser={this.state.loggedInUser}/>
-        </div>
-      </MuiThemeProvider>);
-  }
+    render() {
+        return (
+          <MuiThemeProvider>
+            <div>
+              <HeaderComponent
+                changeScreenName={this.onChangeScreen}
+              />
+              <BodyContainer
+                screenName={this.state.screenName}
+                checkLogin={this.checkLogin}
+                loggedInUser={this.state.loggedInUser}
+              />
+            </div>
+          </MuiThemeProvider>);
+    }
 }
 
 export default AppContainer;

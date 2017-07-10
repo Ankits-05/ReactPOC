@@ -23,7 +23,7 @@ const EmployeeComponent = props => {
 }
 
 EmployeeComponent.PropTypes = {
-  employeeList: PropTypes.arrayOf
+  employeeList: PropTypes.arrayOf(PropTypes.object)
 }
 
 export default EmployeeComponent;
