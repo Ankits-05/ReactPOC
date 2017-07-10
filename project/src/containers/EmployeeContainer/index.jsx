@@ -8,18 +8,18 @@ import EmployeeComponent from 'components/EmployeeComponent';
 
 class EmployeeContainer extends React.Component {
 
-  render() {
-    return (
-      <div>
-        <EmployeeComponent employeeList={this.props.employeeList} />
-      </div>
-    )
-  }
+    render() {
+        return (
+          <div>
+            <EmployeeComponent employeeList={this.props.employeeList} />
+          </div>
+        );
+    }
 
 }
 
 EmployeeContainer.PropTypes = {
-  employeeList: PropTypes.arrayOf
+    employeeList: PropTypes.arrayOf
 };
 
 export default EmployeeContainer;
