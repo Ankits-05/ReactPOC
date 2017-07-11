@@ -1,0 +1,29 @@
+/**
+ * Created by synerzip on 7/7/17.
+ */
+
+import React from 'react';
+import PropTypes from 'prop-types';
+import EmployeeComponent from 'components/EmployeeComponent';
+
+class EmployeeContainer extends React.Component {
+
+    render() {
+        return (
+          <div>
+            <EmployeeComponent employeeList={this.props.employeeList} />
+          </div>
+        );
+    }
+
+}
+
+EmployeeContainer.PropTypes = {
+<<<<<<< HEAD
+    employeeList: PropTypes.arrayOf(PropTypes.object)
+=======
+    employeeList: PropTypes.arrayOf
+>>>>>>> db1ab7d4054f36c3cb818f72ede6388699033c8b
+};
+
+export default EmployeeContainer;

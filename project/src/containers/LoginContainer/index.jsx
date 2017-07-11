@@ -15,6 +15,7 @@ class LoginContainer extends React.Component {
             usernameErrorMsg: '',
             passwordErrorMsg: ''
         };
+
         this.handleUsernameChange = this.handleUsernameChange.bind(this);
         this.handlePasswordChange = this.handlePasswordChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
@@ -63,7 +64,7 @@ class LoginContainer extends React.Component {
     }
 }
 
-LoginContainer.PropTypes = {
+LoginContainer.propTypes = {
     checkLogin: PropTypes.func,
     loggedInUser: PropTypes.bool,
     openErrorMessage: PropTypes.bool,

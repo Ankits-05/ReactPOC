@@ -4,7 +4,7 @@
 import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import HeaderComponent from 'components/Header';
-import BodyContainer from 'components/BodyContainer';
+import BodyContainer from 'containers/BodyContainer';
 
 const employees = [
   { name: 'A', id: 1 },

@@ -16,9 +16,11 @@ const style = {
 const LoginComponent = props => {
     const handleUsernameChange = props.handleUsernameChange;
     const handlePasswordChange = props.handlePasswordChange;
-    const onSubmit = props.onSubmit.bind(this);
+    const onSubmit = props.onSubmit;
     const userErrorMsg = props.userErrorMsg;
     const passwordErrorMsg = props.passwordErrorMsg;
+    const openErrorMessage = props.openErrorMessage;
+    const handleRequestClose = props.handleRequestClose;
 
     return (
       <MuiThemeProvider>
@@ -45,10 +47,10 @@ const LoginComponent = props => {
             onClick={onSubmit}
           />
           <Snackbar
-            open={props.openErrorMessage}
+            open={openErrorMessage}
             message="Wrong Credentials"
             autoHideDuration={4000}
-            onRequestClose={props.handleRequestClose}
+            onRequestClose={handleRequestClose}
           />
         </div>
       </MuiThemeProvider>

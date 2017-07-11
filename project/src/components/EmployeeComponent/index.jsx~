@@ -6,8 +6,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const EmployeeComponent = props => {
-    const employeeList = props.employeeList;
-    const employeeComps = employeeList.map(
+    const employeeComps = props.employeeList.map(
     emp => (
       <div
         className="listDiv"
@@ -22,8 +21,13 @@ const EmployeeComponent = props => {
       </div>);
 };
 
-EmployeeComponent.propTypes = {
-    employeeList: PropTypes.arrayOf(PropTypes.object)
+EmployeeComponent.PropTypes = {
+<<<<<<< HEAD
+  employeeList: PropTypes.arrayOf(PropTypes.object)
+}
+=======
+    employeeList: PropTypes.arrayOf
 };
+>>>>>>> db1ab7d4054f36c3cb818f72ede6388699033c8b
 
 export default EmployeeComponent;

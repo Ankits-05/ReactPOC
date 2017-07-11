@@ -6,19 +6,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import EmployeeComponent from 'components/EmployeeComponent';
 
-class EmployeeContainer extends React.Component {
+const EmployeeContainer = props => {
+    const employeeList = props.employeeList;
 
-    render() {
-        return (
-          <div>
-            <EmployeeComponent employeeList={this.props.employeeList} />
-          </div>
-        );
-    }
+    return (<div>
+      <EmployeeComponent employeeList={employeeList} />
+    </div>);
+};
 
-}
-
-EmployeeContainer.PropTypes = {
+EmployeeContainer.propTypes = {
     employeeList: PropTypes.arrayOf(PropTypes.object)
 };
 

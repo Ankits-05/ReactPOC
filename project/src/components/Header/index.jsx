@@ -7,11 +7,12 @@ import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 
 const HeaderComponent = props => {
+    const username = props.username;
     const style = {
         margin: 12
     };
     let logoutButton;
-    if (props.username !== '') {
+    if (username !== '') {
         logoutButton =
           <RaisedButton label="Logout" primary style={style} />;
     }
@@ -20,7 +21,7 @@ const HeaderComponent = props => {
         <AppBar
           title="My Company"
           iconElementRight={<div>
-            Welcome, {props.username}
+            Welcome, {username}
             <br />
             {logoutButton}
           </div>}
